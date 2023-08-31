@@ -13,18 +13,17 @@ import HomePage from "./state-management/HomePage";
 import authReducer from "./state-management/reducers/authReducer";
 import AuthContext from "./state-management/contexts/authContext";
 import AuthProvider from "./state-management/AuthProvider";
+import TasksProvider from "./state-management/TasksProvider";
 // import TodoList from "./react-query/TodoList";
 
 function App() {
-  const [tasks, tasksDispatch] = useReducer(tasksReducer, []);
-
   return (
     <>
       <AuthProvider>
-        <TasksContext.Provider value={{ tasks, dispatch: tasksDispatch }}>
+        <TasksProvider>
           <NavBar />
           <HomePage />
-        </TasksContext.Provider>
+        </TasksProvider>
       </AuthProvider>
     </>
   );
