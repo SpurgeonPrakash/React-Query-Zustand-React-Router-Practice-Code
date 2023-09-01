@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -7,20 +7,26 @@ const NavBar = () => {
       style={{ background: "#f0f0f0", marginBottom: "1rem" }}
     >
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <NavLink className="navbar-brand" to="/#">
           My App
-        </Link>
+        </NavLink>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link active" to="/">
+              <NavLink
+                // className={({ isActive }) =>
+                //   isActive ? "active nav-link" : "nav-link"
+                // }
+                className="nav-link"
+                to="/"
+              >
                 Home
-              </Link>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/users">
+              <NavLink className="nav-link" to="/users">
                 Users
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
